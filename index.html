@@ -4,9 +4,19 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/g85-security-website/assets/g85%20logo%20transparent-CZl01hjr.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function () {
+        const params = new URLSearchParams(window.location.search);
+        const redirectPath = params.get('p');
+        if (redirectPath) {
+          const nextUrl = redirectPath + window.location.hash;
+          window.history.replaceState(null, '', nextUrl);
+        }
+      })();
+    </script>
     <title>g85-web-draft</title>
-    <script type="module" crossorigin src="/g85-security-website/assets/index-BQgQgSJN.js"></script>
-    <link rel="stylesheet" crossorigin href="/g85-security-website/assets/index-4okopUNI.css">
+    <script type="module" crossorigin src="/g85-security-website/assets/index-DsWyh96R.js"></script>
+    <link rel="stylesheet" crossorigin href="/g85-security-website/assets/index-D1FnLcvt.css">
   </head>
   <body>
     <div id="root"></div>
