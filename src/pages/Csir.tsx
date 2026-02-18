@@ -1,5 +1,6 @@
 import '../styles/Csir.css';
 import { motion } from 'framer-motion';
+import { useMemo, useState } from 'react';
 
 import csrImageOne from '../assets/CSR/img_2_1770108909143.jpg';
 import csrImageTwo from '../assets/CSR/img_3_1770108916691.jpg';
@@ -48,7 +49,101 @@ const csrInitiatives = [
   },
 ];
 
+/*
+  HOW TO ADD CSR CALENDAR EVENTS:
+  1) Add a new object to the `csrEvents` array below.
+  2) Use the date format YYYY-MM-DD (e.g., 2026-04-18).
+  3) Provide a short title and a brief description for the event.
+  4) The calendar will highlight the date and show the details on click.
+*/
+const csrEvents = [
+  {
+    date: '2026-03-12',
+    title: 'School Supplies Drive',
+    description: 'Delivering stationery packs to learners in need across partner schools.',
+  },
+  {
+    date: '2026-04-06',
+    title: 'Community Safety Workshop',
+    description: 'Safety awareness sessions with local youth and community leaders.',
+  },
+  {
+    date: '2026-04-24',
+    title: 'Winter Warmth Initiative',
+    description: 'Donation and distribution of blankets and warm clothing.',
+  },
+];
+
+const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
 export default function Csir() {
+  const today = useMemo(() => new Date(), []);
+  const [calendarMonth, setCalendarMonth] = useState(
+    new Date(today.getFullYear(), today.getMonth(), 1)
+  );
+  const [selectedDate, setSelectedDate] = useState<string | null>(null);
+
+  const eventsByDate = useMemo(() => {
+    const map = new Map<string, { title: string; description: string }>();
+    csrEvents.forEach((event) => {
+      map.set(event.date, { title: event.title, description: event.description });
+    });
+    return map;
+  }, []);
+
+  const monthLabel = calendarMonth.toLocaleDateString('en-ZA', {
+    month: 'long',
+    year: 'numeric',
+  });
+
+  const monthDays = useMemo(() => {
+    const year = calendarMonth.getFullYear();
+    const month = calendarMonth.getMonth();
+    const firstDay = new Date(year, month, 1);
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    const leadingBlankDays = firstDay.getDay();
+    const slots: Array<{ key: string; day: number } | null> = [];
+
+    for (let i = 0; i < leadingBlankDays; i += 1) {
+      slots.push(null);
+    }
+
+    for (let day = 1; day <= daysInMonth; day += 1) {
+      const monthValue = String(month + 1).padStart(2, '0');
+      const dayValue = String(day).padStart(2, '0');
+      const key = `${year}-${monthValue}-${dayValue}`;
+      slots.push({ key, day });
+    }
+
+    return slots;
+  }, [calendarMonth]);
+
+  const selectedEvent = selectedDate ? eventsByDate.get(selectedDate) : undefined;
+  const selectedLabel = selectedDate
+    ? new Date(`${selectedDate}T00:00:00`).toLocaleDateString('en-ZA', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+      })
+    : 'Select a highlighted date';
+
+  const upcomingEvents = useMemo(() => {
+    const sorted = [...csrEvents].sort((a, b) => a.date.localeCompare(b.date));
+    return sorted;
+  }, []);
+
+  const handlePrevMonth = () => {
+    setCalendarMonth(
+      new Date(calendarMonth.getFullYear(), calendarMonth.getMonth() - 1, 1)
+    );
+  };
+
+  const handleNextMonth = () => {
+    setCalendarMonth(
+      new Date(calendarMonth.getFullYear(), calendarMonth.getMonth() + 1, 1)
+    );
+  };
+
   return (
     <div className="csir-page">
       {/* Hero intro */}
@@ -92,6 +187,82 @@ export default function Csir() {
                 </li>
               ))}
             </ul>
+          </div>
+          <div className="csir-calendar">
+            <div className="csir-calendar__header">
+              <div>
+                <h3>CSR Calendar</h3>
+                <p>
+                  Highlighted dates show upcoming CSR projects. Click a date to see the details.
+                </p>
+              </div>
+              <div className="csir-calendar__nav">
+                <button
+                  type="button"
+                  className="csir-calendar__nav-btn"
+                  onClick={handlePrevMonth}
+                >
+                  Prev
+                </button>
+                <span className="csir-calendar__month">{monthLabel}</span>
+                <button
+                  type="button"
+                  className="csir-calendar__nav-btn"
+                  onClick={handleNextMonth}
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+            <div className="csir-calendar__grid">
+              {weekDays.map((day) => (
+                <div key={day} className="csir-calendar__weekday">
+                  {day}
+                </div>
+              ))}
+              {monthDays.map((slot, index) => {
+                if (!slot) {
+                  return <div key={`empty-${index}`} className="csir-calendar__empty" />;
+                }
+
+                const hasEvent = eventsByDate.has(slot.key);
+                const isSelected = slot.key === selectedDate;
+
+                return (
+                  <button
+                    key={slot.key}
+                    type="button"
+                    className={`csir-calendar__day${hasEvent ? ' has-event' : ''}${
+                      isSelected ? ' is-selected' : ''
+                    }`}
+                    onClick={() => setSelectedDate(slot.key)}
+                  >
+                    <span className="csir-calendar__day-num">{slot.day}</span>
+                    {hasEvent && <span className="csir-calendar__dot" />}
+                  </button>
+                );
+              })}
+            </div>
+            <div className="csir-calendar__details">
+              <span className="csir-calendar__label">Selected date</span>
+              <h4>{selectedLabel}</h4>
+              <p>
+                {selectedEvent
+                  ? `${selectedEvent.title}: ${selectedEvent.description}`
+                  : 'No CSR event scheduled for this date.'}
+              </p>
+            </div>
+            <div className="csir-calendar__upcoming">
+              <span className="csir-calendar__label">Upcoming events</span>
+              <ul>
+                {upcomingEvents.map((event) => (
+                  <li key={event.date}>
+                    <strong>{event.title}</strong>
+                    <span>{event.date}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
           <p>
             Working alongside community partners, we distributed essential supplies directly to

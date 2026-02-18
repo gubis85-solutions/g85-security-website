@@ -313,7 +313,7 @@ export default function About() {
 
         {/* Interactive office map and details */}
         <motion.div className="about-card about-map" variants={itemVariants}>
-          <h2>South Africa Footprint <br/> <span className="about-h2__accent">Office Locations</span></h2>
+          <h2>Where to find us <br/> <span className="about-h2__accent">Office Locations</span></h2>
           <div className="about-map__layout">
             <div className="about-map__canvas" role="img" aria-label="Map of South Africa with office locations">
               <img
