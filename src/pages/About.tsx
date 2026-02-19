@@ -33,7 +33,7 @@ export default function About() {
   const locations = [
     {
       id: 'gauteng',
-      name: 'Head Office',
+      name: 'Boitumelo Mahlangu Corporate Office (head office)',
       address: '254 Lochner Road, Raslouw, Centurion, 0109',
       left: '60%',
       top: 'calc(40% - 10px)',
@@ -109,7 +109,7 @@ export default function About() {
   const officeList = [
     {
       id: 'gauteng',
-      name: 'Head Office',
+      name: 'Boitumelo Mahlangu Corporate Office (head office)',
       address: '254 Lochner Road, Raslouw, Centurion, 0109',
       color: '#F48020',
     },

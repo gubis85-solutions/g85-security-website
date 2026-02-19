@@ -490,17 +490,27 @@
   }
 
   .csir-calendar__grid {
-    padding: 12px;
-    gap: 8px;
+    padding: 10px;
+    gap: 6px;
   }
 
   .csir-calendar__day {
-    min-height: 40px;
-    border-radius: 10px;
+    min-height: 34px;
+    border-radius: 8px;
   }
 
   .csir-calendar__day-num {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
+  }
+
+  .csir-calendar__day.is-selected {
+    transform: none;
+  }
+
+  .csir-calendar__dot {
+    width: 6px;
+    height: 6px;
+    bottom: 4px;
   }
 
   .csir-calendar__upcoming li {

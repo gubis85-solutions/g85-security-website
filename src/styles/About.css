@@ -528,6 +528,10 @@
   line-height: 1.6;
 }
 
+.about-map__details .about-map__label {
+  color: #2B3D79;
+}
+
 .about-map__list {
   display: grid;
   gap: 14px;

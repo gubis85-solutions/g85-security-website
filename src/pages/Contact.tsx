@@ -15,7 +15,7 @@ export default function Contact() {
   const officeLocations = [
     {
       id: 'ho',
-      label: 'Head Office',
+      label: 'Boitumelo Mahlangu Corporate Office (head office)',
       address: '254 Lochner Road, Raslouw, Centurion, 0109',
       dotClass: 'office-dot--ho',
     },
@@ -122,7 +122,7 @@ export default function Contact() {
           </div>
           <div className="info-item">
             <h3>Address</h3>
-            <p>Head Office<br />
+            <p>Boitumelo Mahlangu Corporate Office (head office)<br />
               254 Lochner Road<br />
               Raslouw, Centurion<br />
               0109, South Africa</p>
@@ -206,7 +206,7 @@ export default function Contact() {
           <h2 className="contact-heading">
             Our <span className="contact-heading__accent">Location</span>
           </h2>
-          <p>Visit us at our Head Office.</p>
+          <p>Visit us at Boitumelo Mahlangu Corporate Office (head office).</p>
         </div>
         <div className="contact-map__frame">
           <iframe
