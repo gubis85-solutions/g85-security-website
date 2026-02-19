@@ -70,14 +70,14 @@ export default function Home() {
     },
   };
 
-  // Service slideshow auto-advance
+  // Service slideshow auto-advance (resets on manual navigation).
   useEffect(() => {
-    const serviceSlideInterval = setInterval(() => {
+    const serviceSlideTimeout = setTimeout(() => {
       setCurrentServiceIndex((prev) => (prev + 1) % serviceCategories.length);
-    }, 8000); // Change every 8 seconds
+    }, 8000);
 
-    return () => clearInterval(serviceSlideInterval);
-  }, [serviceCategories.length]);
+    return () => clearTimeout(serviceSlideTimeout);
+  }, [currentServiceIndex, serviceCategories.length]);
 
   // Navigate to previous service
   const prevService = () => {

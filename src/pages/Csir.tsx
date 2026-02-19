@@ -144,6 +144,12 @@ export default function Csir() {
     );
   };
 
+  const handleUpcomingSelect = (eventDate: string) => {
+    const [year, month] = eventDate.split('-').map(Number);
+    setCalendarMonth(new Date(year, month - 1, 1));
+    setSelectedDate(eventDate);
+  };
+
   return (
     <div className="csir-page">
       {/* Hero intro */}
@@ -188,82 +194,6 @@ export default function Csir() {
               ))}
             </ul>
           </div>
-          <div className="csir-calendar">
-            <div className="csir-calendar__header">
-              <div>
-                <h3>CSR Calendar</h3>
-                <p>
-                  Highlighted dates show upcoming CSR projects. Click a date to see the details.
-                </p>
-              </div>
-              <div className="csir-calendar__nav">
-                <button
-                  type="button"
-                  className="csir-calendar__nav-btn"
-                  onClick={handlePrevMonth}
-                >
-                  Prev
-                </button>
-                <span className="csir-calendar__month">{monthLabel}</span>
-                <button
-                  type="button"
-                  className="csir-calendar__nav-btn"
-                  onClick={handleNextMonth}
-                >
-                  Next
-                </button>
-              </div>
-            </div>
-            <div className="csir-calendar__grid">
-              {weekDays.map((day) => (
-                <div key={day} className="csir-calendar__weekday">
-                  {day}
-                </div>
-              ))}
-              {monthDays.map((slot, index) => {
-                if (!slot) {
-                  return <div key={`empty-${index}`} className="csir-calendar__empty" />;
-                }
-
-                const hasEvent = eventsByDate.has(slot.key);
-                const isSelected = slot.key === selectedDate;
-
-                return (
-                  <button
-                    key={slot.key}
-                    type="button"
-                    className={`csir-calendar__day${hasEvent ? ' has-event' : ''}${
-                      isSelected ? ' is-selected' : ''
-                    }`}
-                    onClick={() => setSelectedDate(slot.key)}
-                  >
-                    <span className="csir-calendar__day-num">{slot.day}</span>
-                    {hasEvent && <span className="csir-calendar__dot" />}
-                  </button>
-                );
-              })}
-            </div>
-            <div className="csir-calendar__details">
-              <span className="csir-calendar__label">Selected date</span>
-              <h4>{selectedLabel}</h4>
-              <p>
-                {selectedEvent
-                  ? `${selectedEvent.title}: ${selectedEvent.description}`
-                  : 'No CSR event scheduled for this date.'}
-              </p>
-            </div>
-            <div className="csir-calendar__upcoming">
-              <span className="csir-calendar__label">Upcoming events</span>
-              <ul>
-                {upcomingEvents.map((event) => (
-                  <li key={event.date}>
-                    <strong>{event.title}</strong>
-                    <span>{event.date}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
           <p>
             Working alongside community partners, we distributed essential supplies directly to
             disadvantaged schools, ensuring each learner received what they needed to stay prepared,
@@ -295,6 +225,88 @@ export default function Csir() {
               <figcaption>{image.alt}</figcaption>
             </figure>
           ))}
+        </div>
+        <div className="csir-calendar">
+          <div className="csir-calendar__header">
+            <div>
+              <h3>CSR Calendar</h3>
+              <p>
+                Highlighted dates show upcoming CSR projects. Click a date to see the details.
+              </p>
+            </div>
+            <div className="csir-calendar__nav">
+              <button
+                type="button"
+                className="csir-calendar__nav-btn"
+                onClick={handlePrevMonth}
+              >
+                Prev
+              </button>
+              <span className="csir-calendar__month">{monthLabel}</span>
+              <button
+                type="button"
+                className="csir-calendar__nav-btn"
+                onClick={handleNextMonth}
+              >
+                Next
+              </button>
+            </div>
+          </div>
+          <div className="csir-calendar__grid">
+            {weekDays.map((day) => (
+              <div key={day} className="csir-calendar__weekday">
+                {day}
+              </div>
+            ))}
+            {monthDays.map((slot, index) => {
+              if (!slot) {
+                return <div key={`empty-${index}`} className="csir-calendar__empty" />;
+              }
+
+              const hasEvent = eventsByDate.has(slot.key);
+              const isSelected = slot.key === selectedDate;
+
+              return (
+                <button
+                  key={slot.key}
+                  type="button"
+                  className={`csir-calendar__day${hasEvent ? ' has-event' : ''}${
+                    isSelected ? ' is-selected' : ''
+                  }`}
+                  onClick={() => setSelectedDate(slot.key)}
+                >
+                  <span className="csir-calendar__day-num">{slot.day}</span>
+                  {hasEvent && <span className="csir-calendar__dot" />}
+                </button>
+              );
+            })}
+          </div>
+          <div className="csir-calendar__details">
+            <span className="csir-calendar__label">Selected date</span>
+            <h4>{selectedLabel}</h4>
+            <p>
+              {selectedEvent
+                ? `${selectedEvent.title}: ${selectedEvent.description}`
+                : 'No CSR event scheduled for this date.'}
+            </p>
+          </div>
+          <div className="csir-calendar__upcoming">
+            <span className="csir-calendar__label">Upcoming events</span>
+            <ul>
+              {upcomingEvents.map((event) => (
+                <li key={event.date}>
+                  <button
+                    type="button"
+                    className="csir-calendar__upcoming-item"
+                    onClick={() => handleUpcomingSelect(event.date)}
+                  >
+                    <span className="csir-calendar__upcoming-title">{event.title}</span>
+                    <span className="csir-calendar__upcoming-date">{event.date}</span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
     </div>

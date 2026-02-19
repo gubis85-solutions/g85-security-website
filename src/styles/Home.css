@@ -469,6 +469,20 @@
     padding: 60px 20px;
   }
 
+  .slideshow-cards-container {
+    padding: 0;
+    gap: 0;
+  }
+
+  .service-category-slide-wrapper.side {
+    display: none;
+  }
+
+  .service-category-slide-wrapper.active {
+    max-width: 420px;
+    min-height: 320px;
+  }
+
   .service-category-slide-wrapper {
     min-height: 300px;
   }
@@ -494,6 +508,11 @@
 @media (max-width: 480px) {
   .services-categories-section {
     padding: 40px 15px;
+  }
+
+  .service-category-slide-wrapper.active {
+    max-width: 360px;
+    min-height: 280px;
   }
 
   .service-category-slide-wrapper {

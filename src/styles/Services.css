@@ -164,7 +164,7 @@
   background: linear-gradient(135deg, #ffffff 0%, #f1f4ff 100%);
   color: #2B3D79;
   position: relative;
-  padding-bottom: 64px;
+  padding-bottom: 88px;
 }
 
 .service-card__front h3 {
@@ -300,6 +300,15 @@
   .service-card__front,
   .service-card__back {
     padding: 22px;
+  }
+
+  .service-card__front {
+    padding-bottom: 96px;
+  }
+
+  .service-card__hint {
+    position: static;
+    margin-top: auto;
   }
 
   .service-card h3 {

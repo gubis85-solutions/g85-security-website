@@ -321,6 +321,21 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+.csir-calendar__upcoming-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border: none;
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+}
+
 .csir-calendar__upcoming li:hover {
   transform: translateX(4px);
   border-color: rgba(244, 128, 32, 0.5);
@@ -328,13 +343,13 @@
   box-shadow: 0 6px 18px rgba(244, 128, 32, 0.3);
 }
 
-.csir-calendar__upcoming li strong {
+.csir-calendar__upcoming-title {
   color: #ffffff;
   font-weight: 800;
   letter-spacing: -0.01em;
 }
 
-.csir-calendar__upcoming li span {
+.csir-calendar__upcoming-date {
   color: rgba(244, 128, 32, 0.9);
   font-weight: 600;
   font-size: 0.85rem;
@@ -435,6 +450,10 @@
     flex-direction: column;
     align-items: flex-start;
   }
+
+  .csir-calendar__upcoming-item {
+    align-items: flex-start;
+  }
 }
 
 @media (max-width: 480px) {
@@ -452,5 +471,39 @@
 
   .csir-gallery__item img {
     height: 180px;
+  }
+
+  .csir-calendar {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .csir-calendar__header {
+    gap: 14px;
+  }
+
+  .csir-calendar__nav {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 8px 12px;
+  }
+
+  .csir-calendar__grid {
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .csir-calendar__day {
+    min-height: 40px;
+    border-radius: 10px;
+  }
+
+  .csir-calendar__day-num {
+    font-size: 0.95rem;
+  }
+
+  .csir-calendar__upcoming li {
+    padding: 12px 14px;
   }
 }

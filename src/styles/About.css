@@ -425,11 +425,15 @@
     transform 0.2s ease;
 }
 
+.about-map__details .about-map__label {
+  color: #2B3D79;
+}
+
 .about-map__label {
   text-transform: uppercase;
   letter-spacing: 1.6px;
   font-size: 0.75rem;
-  color: var(--theme-orange);
+  color: #2B3D79;
   font-weight: 700;
   margin: 0;
 }
@@ -584,6 +588,14 @@
 }
 
 @media (max-width: 768px) {
+  .about-video-section {
+    padding: 24px;
+  }
+
+  .about-video-section .video-player-container {
+    border-radius: 14px;
+  }
+
   .about-map__layout {
     grid-template-columns: 1fr;
   }
@@ -608,6 +620,14 @@
 }
 
 @media (max-width: 480px) {
+  .about-video-section {
+    padding: 20px;
+  }
+
+  .about-video-section .video-player-container {
+    border-radius: 12px;
+  }
+
   .about-hero {
     padding: 40px 20px;
   }

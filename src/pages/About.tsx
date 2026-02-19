@@ -33,8 +33,8 @@ export default function About() {
   const locations = [
     {
       id: 'gauteng',
-      name: 'Boitumelo Corporate House (main office)',
-      address: '25 President Brand St, Bloemfontein, Free State, 9301',
+      name: 'Head Office',
+      address: '254 Lochner Road, Raslouw, Centurion, 0109',
       left: '60%',
       top: 'calc(40% - 10px)',
       color: '#F48020',
@@ -42,7 +42,7 @@ export default function About() {
     {
       id: 'limpopo',
       name: 'Limpopo Office',
-      address: '12 Thabo Mbeki St, Polokwane, Limpopo, 0700',
+      address: 'No. 16 5th Avenue, Thabazimbi',
       left: '60%',
       top: 'calc(40% - 65px)',
       color: '#8B5E34',
@@ -109,14 +109,14 @@ export default function About() {
   const officeList = [
     {
       id: 'gauteng',
-      name: 'Boitumelo Corporate House (main office)',
-      address: '25 President Brand St, Bloemfontein, Free State, 9301',
+      name: 'Head Office',
+      address: '254 Lochner Road, Raslouw, Centurion, 0109',
       color: '#F48020',
     },
     {
       id: 'limpopo',
       name: 'Limpopo Office',
-      address: '12 Thabo Mbeki St, Polokwane, Limpopo, 0700',
+      address: 'No. 16 5th Avenue, Thabazimbi',
       color: '#8B5E34',
       titleClassName: 'about-map__title--brown',
     },

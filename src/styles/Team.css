@@ -70,6 +70,19 @@
   object-position: center;
 }
 
+.team-grid:not(.team-grid--featured) .team-card__photo {
+  height: auto;
+  aspect-ratio: 3 / 4;
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.team-grid:not(.team-grid--featured) .team-card__photo-img {
+  object-fit: contain;
+  object-position: center;
+  background: #ffffff;
+}
+
 .team-grid--compact {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
@@ -155,6 +168,11 @@
   .team-card__photo {
     height: 240px;
   }
+
+  .team-grid:not(.team-grid--featured) .team-card__photo {
+    height: auto;
+    aspect-ratio: 3 / 4;
+  }
 }
 @media (max-width: 480px) {
   .team-card {
@@ -163,6 +181,11 @@
 
   .team-card__photo {
     height: 200px;
+  }
+
+  .team-grid:not(.team-grid--featured) .team-card__photo {
+    height: auto;
+    aspect-ratio: 3 / 4;
   }
 
   .team-card__name {

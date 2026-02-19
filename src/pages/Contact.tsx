@@ -15,14 +15,14 @@ export default function Contact() {
   const officeLocations = [
     {
       id: 'ho',
-      label: 'Boitumelo Corporate House(Head Office)',
-      address: '25 President Brand St, Bloemfontein, Free State, 9301',
+      label: 'Head Office',
+      address: '254 Lochner Road, Raslouw, Centurion, 0109',
       dotClass: 'office-dot--ho',
     },
     {
       id: 'limpopo',
       label: 'Limpopo Office',
-      address: '12 Thabo Mbeki St, Polokwane, Limpopo, 0700',
+      address: 'No. 16 5th Avenue, Thabazimbi',
       dotClass: 'office-dot--limpopo',
     },
     {
@@ -122,10 +122,10 @@ export default function Contact() {
           </div>
           <div className="info-item">
             <h3>Address</h3>
-            <p>Bokamoso Mahlangu Corporate House<br />
-              254 Lochner Rd<br />
-              Celtisdal, Centurion<br />
-              0157, South Africa</p>
+            <p>Head Office<br />
+              254 Lochner Road<br />
+              Raslouw, Centurion<br />
+              0109, South Africa</p>
           </div>
           <div className="info-item">
             <h3 className="contact-subheading">
@@ -206,12 +206,12 @@ export default function Contact() {
           <h2 className="contact-heading">
             Our <span className="contact-heading__accent">Location</span>
           </h2>
-          <p>Visit us at Boitumelo Mahlangu Corporate House.</p>
+          <p>Visit us at our Head Office.</p>
         </div>
         <div className="contact-map__frame">
           <iframe
             title="Gubis85 Security Service location"
-            src="https://www.google.com/maps?q=254%20Lochner%20Rd%2C%20Celtisdal%2C%20Centurion%2C%200157&output=embed"
+            src="https://www.google.com/maps?q=254%20Lochner%20Road%2C%20Raslouw%2C%20Centurion%2C%200109&output=embed"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             allowFullScreen
