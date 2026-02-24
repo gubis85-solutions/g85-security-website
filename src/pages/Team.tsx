@@ -14,6 +14,7 @@ const executiveLeaders = [
     name: 'Mr Calvin Mahlangu & Mrs Boitumelo Mahlangu',
     note: 'Founder & Executive Chairman | Executive Director ',
     note1: 'Strategic vision, corporate governance, and enterprise leadership.',
+    bio: 'Co-founders with a combined 30+ years of leadership in security and community engagement, overseeing strategy and growth.',
     image: execImg,
   },
   {
@@ -21,6 +22,7 @@ const executiveLeaders = [
     name: 'Mr Zakhele Khumalo',
     note: 'Executive leadership, enterprise strategy, and performance.',
     image: gmImg,
+    bio: 'Leads day-to-day operations, performance management, and service delivery across all regions.',
   },
 ];
 
@@ -30,30 +32,35 @@ const departmentHeads = [
     name: 'Ms. Precious Skosana',
     note: 'Labour relations, workforce engagement, and compliance.',
     image: irImg,
+    bio: 'Expert in employee relations and engagement, ensuring fair labour practices and constructive workplace dialogue.',
   },
   {
     role: 'HR & Payroll',
     name: 'Ms. Maud Wiedeman',
     note: 'Talent, onboarding, payroll accuracy, and staff care.',
     image: hrImg,
+    bio: 'Responsible for talent acquisition, payroll integrity, and staff wellbeing programmes.',
   },
   {
     role: 'Operations',
     name: 'Mr City Ndala',
     note: 'Operational readiness, site delivery, and service quality.',
     image: opsImg,
+    bio: 'Oversees field operations and ensures teams deliver consistent, high-quality services to clients.',
   },
   {
     role: 'Compliance',
     name: 'Mr Kgwadi Tende',
     note: 'Regulatory alignment, audit readiness, and standards.',
     image: complianceImg,
+    bio: 'Drives compliance, risk management, and audit preparedness across the organisation.',
   },
   {
     role: 'Supply Chain',
     name: 'Mr Tiyani Khoza',
     note: 'Procurement strategy, vendor management, and logistics.',
     image: supplyChainImg,
+    bio: 'Manages procurement, vendor relationships, and logistics to support uninterrupted operations.',
   },
 ];
 
@@ -106,6 +113,7 @@ export default function Team() {
                 <h3>{leader.name}</h3>
                 <p className="team-card__note">{leader.note}</p>
                 {leader.note1 && <p className="team-card__note">{leader.note1}</p>}
+                {leader.bio && <p className="team-card__bio">{leader.bio}</p>}
               </div>
             </article>
           ))}
@@ -133,6 +141,7 @@ export default function Team() {
                 <p className="team-card__role">{leader.role}</p>
                 <h3>{leader.name}</h3>
                 <p className="team-card__note">{leader.note}</p>
+                {leader.bio && <p className="team-card__bio">{leader.bio}</p>}
               </div>
             </article>
           ))}

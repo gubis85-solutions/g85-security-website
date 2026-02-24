@@ -10,7 +10,7 @@ import csrImageThree from '../assets/CSR/img_5_1770108926677.jpg';
 const csrGallery = [
   {
     src: csrImageOne,
-    alt: 'CSR drive distributing passout pads to learners',
+    alt: 'CSR drive distributing menstrual hygiene products to learners',
   },
   {
     src: csrImageTwo,

@@ -78,9 +78,9 @@
 }
 
 .team-grid:not(.team-grid--featured) .team-card__photo-img {
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
-  background: #ffffff;
+  background: none;
 }
 
 .team-grid--compact {
@@ -154,6 +154,13 @@
   color: rgba(255, 255, 255, 0.85);
   line-height: 1.6;
   font-size: 0.95rem;
+}
+
+.team-card__bio {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.5;
+  font-size: 0.9rem;
 }
 
 @media (max-width: 768px) {

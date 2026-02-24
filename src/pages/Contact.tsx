@@ -210,8 +210,8 @@ export default function Contact() {
         </div>
         <div className="contact-map__frame">
           <iframe
-            title="Gubis85 Security Service location"
-            src="https://www.google.com/maps?q=254%20Lochner%20Road%2C%20Raslouw%2C%20Centurion%2C%200109&output=embed"
+            title="Boitumelo Mahlangu Corporate House location"
+            src="https://www.google.com/maps?cid=0x1e95654e08b9d525%3A0x1d5fa18aa949aef1&output=embed"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             allowFullScreen

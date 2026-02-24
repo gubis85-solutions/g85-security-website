@@ -368,22 +368,57 @@
 .about-map__canvas {
   position: relative;
   width: 100%;
-  min-height: 320px;
-  background: #F48020;
+  min-height: 420px;
+  background: #2B3D79;
   border-radius: 16px;
-  padding: 8px 0;
-  display: grid;
-  place-items: center;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
 }
 
 .about-map__svg {
-  width: 100%;
-  max-width: 100%;
+  width: min(100%, 880px);
   height: auto;
   display: block;
   z-index: 2;
   border-radius: 12px;
+  transform: translate(50px, 166px) scale(1.62);
+  transform-origin: center;
+}
+
+.about-map__svg path {
+  fill: #F48020;
+  stroke: #1B234E;
+  transition: fill 0.2s ease, stroke 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+  transform-origin: center;
+}
+
+.about-map__svg path:hover,
+.about-map__svg path:focus-visible {
+  fill: #ff9a3c;
+  stroke: #0f1b3d;
+  outline: none;
+}
+
+.about-map__svg path.is-active {
+  fill: #ffb060;
+  stroke: #0f1b3d;
+  transform: scale(1.01);
+}
+
+.about-map__svg text[data-province-label="true"] {
+  fill: #0f1b3d;
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: capitalize;
+  pointer-events: none;
+}
+
+.about-map__svg g#label_points {
+  display: none;
 }
 
 .about-map__labels text {
