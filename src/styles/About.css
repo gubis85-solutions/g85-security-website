@@ -4,6 +4,7 @@
   padding-bottom: 90px;
   background: #2B3D79;
   color: #ffffff;
+  overflow-x: clip;
 }
 
 .about-hero {
@@ -88,6 +89,10 @@
   padding: 0 clamp(20px, 4vw, 80px);
   display: grid;
   gap: 28px;
+}
+
+.about-body > * {
+  min-width: 0;
 }
 
 .about-card {
@@ -365,6 +370,10 @@
   align-items: center;
 }
 
+.about-map__layout > * {
+  min-width: 0;
+}
+
 .about-map__canvas {
   position: relative;
   width: 100%;
@@ -507,6 +516,9 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  line-height: 1.35;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .about-map__title--blue {
@@ -596,6 +608,7 @@
   color: #ffffff;
   font-size: 0.95rem;
   line-height: 1.6;
+  overflow-wrap: anywhere;
 }
 
 .about-map__title {
@@ -610,6 +623,9 @@
   font-weight: 600;
   cursor: pointer;
   text-align: left;
+  line-height: 1.35;
+  white-space: normal;
+  overflow-wrap: anywhere;
   transition: all 0.3s ease;
 }
 
@@ -645,13 +661,13 @@
   }
 
   .about-map__canvas {
-    min-height: 320px;
+    min-height: 0;
     padding: 12px;
   }
 
   .about-map__svg {
     width: 100%;
-    max-width: 620px;
+    max-width: none;
     transform: none;
   }
 
@@ -708,12 +724,16 @@
   }
 
   .about-map__canvas {
-    min-height: 260px;
+    min-height: 0;
     padding: 8px;
   }
 
   .about-map__details {
     padding: 14px;
+  }
+
+  .about-map__item {
+    padding: 10px 12px;
   }
 
   .about-map__svg text[data-province-label="true"] {
