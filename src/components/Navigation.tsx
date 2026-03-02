@@ -85,7 +85,7 @@ export default function Navigation() {
             </div>
             <div className="contact-item">
               <FaEnvelope size={14} />
-              <span>info@Gubis85.co.za</span>
+              <span>info@gubis85.co.za</span>
             </div>
           </div>
 

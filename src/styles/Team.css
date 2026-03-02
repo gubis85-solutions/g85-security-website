@@ -73,14 +73,14 @@
 .team-grid:not(.team-grid--featured) .team-card__photo {
   height: auto;
   aspect-ratio: 3 / 4;
-  padding: 6px;
+  padding: 10px;
   background: rgba(255, 255, 255, 0.08);
 }
 
 .team-grid:not(.team-grid--featured) .team-card__photo-img {
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
-  background: none;
+  background: rgba(15, 26, 58, 0.25);
 }
 
 .team-grid--compact {

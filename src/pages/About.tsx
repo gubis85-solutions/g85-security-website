@@ -359,7 +359,6 @@ export default function About() {
               dangerouslySetInnerHTML={{ __html: mapMarkup }}
             />
             <div className="about-map__details">
-              <p className="about-map__label about-map__label--blue">Selected office</p>
               <div className="about-map__list">
                 {officeList.map((location) => {
                   const isActive = activeLocationId === location.id;

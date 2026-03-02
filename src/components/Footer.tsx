@@ -27,7 +27,7 @@ export default function Footer() {
           <p><i>Boitumelo Mahlangu Coporate House</i></p>
           <p>254 Lochner Rd, Celtisdal, Centurion, 0157</p>
           <p>086 137 7666</p>
-          <p>info@Gubis85security.com</p>
+          <p>info@gubis85security.com</p>
         </div>
         <div className="footer-section footer-section--social">
           <h4>Follow Us</h4>

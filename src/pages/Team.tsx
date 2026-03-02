@@ -7,6 +7,8 @@ import hrImg from '../assets/management-images/hr_payroll.jpg';
 import opsImg from '../assets/management-images/Operations.jpg';
 import complianceImg from '../assets/management-images/compliance.png';
 import supplyChainImg from '../assets/management-images/supply_chain.jpg';
+import cfoImg from '../assets/management-images/CFO.jpg';
+import logisticsImg from '../assets/management-images/Logistics.jpg';
 
 const executiveLeaders = [
   {
@@ -27,6 +29,20 @@ const executiveLeaders = [
 ];
 
 const departmentHeads = [
+  {
+    role: 'Chief Financial Officer (CFO)',
+    name: 'Mr William Moshupye',
+    note: 'Financial stewardship, budgeting, governance, and reporting.',
+    image: cfoImg,
+    bio: 'Leads financial strategy, budgeting, controls, and statutory reporting to support sustainable growth and sound governance.',
+  },
+  {
+    role: 'Logistics Director',
+    name: 'Ms Lorraine Ngedle',
+    note: 'Logistics planning, fleet coordination, and service continuity.',
+    image: logisticsImg,
+    bio: 'Oversees logistics planning, resource deployment, and delivery coordination to keep operations responsive and reliable.',
+  },
   {
     role: 'Industrial Relations',
     name: 'Ms. Precious Skosana',

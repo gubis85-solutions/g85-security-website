@@ -81,6 +81,10 @@
   transition: all 0.3s ease;
 }
 
+.contact-item span {
+  overflow-wrap: anywhere;
+}
+
 .contact-item svg {
   color: #F48020;
 }
@@ -273,6 +277,12 @@
 }
 
 @media (max-width: 768px) {
+  .social-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
   .social-icons {
     gap: 15px;
   }
@@ -286,10 +296,17 @@
   .contact-details {
     gap: 15px;
     font-size: 0.9rem;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .search-input {
     width: 150px;
+  }
+
+  .search-bar {
+    width: 100%;
+    max-width: 420px;
   }
 
   .navbar {
@@ -310,7 +327,7 @@
     gap: 1rem;
     width: 100%;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   .nav-link {
