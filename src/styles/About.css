@@ -742,13 +742,13 @@
   }
 
   .about-map__canvas {
-    min-height: 320px;
+    min-height: 360px;
     padding: 8px;
   }
 
   .about-map__svg {
     width: min(100%, 560px);
-    transform: translate(0, 124px) scale(1.42);
+    transform: translate(28px, 92px) scale(1.85);
     transform-origin: center;
   }
 
